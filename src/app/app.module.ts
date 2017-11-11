@@ -16,8 +16,9 @@ import { MatToolbarModule, MatButtonModule, MatIconModule, MatTabsModule, MatCar
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HomeComponent } from './home/home.component';
 
+import { HomeComponent } from './home/home.component';
+import { JevanComponent } from './home/jevan/jevan.component'
 import { UserService } from './services/user.service';
 
 const appRoutes: Routes = [
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    JevanComponent
   ],
   imports: [
     BrowserModule,

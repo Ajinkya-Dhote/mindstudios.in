@@ -47,8 +47,12 @@ export class LoginComponent implements OnInit {
 
   goToHome() {
     this.ngZone.run(() => {
+      console.log("hiii");
+      
       this.router.navigateByUrl('');
     });
+    console.log("hhh");
+    
     this.router.navigate[''];
   }
   
