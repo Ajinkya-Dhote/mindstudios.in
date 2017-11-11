@@ -4,3 +4,8 @@ html, body {
     height: 100%;
     margin: 0px;
 }
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
+  }
