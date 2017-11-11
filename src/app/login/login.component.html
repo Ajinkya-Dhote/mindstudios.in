@@ -1,0 +1,12 @@
+<div class="login" fxLayout="row" fxLayoutAlign="center center"> 
+  <div *ngIf="afAuth.authState | async; let user; else showLogin">
+  <h1>Hello {{ user.displayName }}!</h1>
+  <button (click)="logout()">Logout</button>
+</div>
+<ng-template #showLogin>
+  <div >
+    <button mat-raised-button color="primary" (click)="login()">Login with Google</button>
+  </div>
+  
+</ng-template>
+</div>

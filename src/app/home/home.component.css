@@ -1,0 +1,8 @@
+.example-card {
+    width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://maxcdn.icons8.com/Share/icon/Sports//running1600.png');
+    background-size: cover;
+  }

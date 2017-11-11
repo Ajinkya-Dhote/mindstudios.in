@@ -1,3 +1,10 @@
-<h1>
-  {{title}}
-</h1>
+
+<mat-toolbar color="primary">
+  <span>Health Tracker</span>
+  <span class="spacer"></span>
+  <span [hidden]="isLogoutButtonHidden">
+    <!-- <button mat-button color="warn" (click)="logout()">Logout</button> -->
+    <mat-icon (click)="logout()">power_settings_new</mat-icon>
+  </span>
+</mat-toolbar>
+<router-outlet></router-outlet>
