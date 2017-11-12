@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
-
+import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,10 +12,12 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   photoURL: string;
   displayName: string;
+  user: any;
 
   constructor(public afAuth: AngularFireAuth,
               private router: Router,
-              private ngZone: NgZone) { }
+              private ngZone: NgZone,
+              userService: UserService) { }
 
   ngOnInit() {
     this.afAuth.authState.subscribe(res => {
@@ -28,6 +30,7 @@ export class HomeComponent implements OnInit {
         this.router.navigateByUrl('');
       });
      }
+    // this.userService.setUser(res);
     });
   }
 

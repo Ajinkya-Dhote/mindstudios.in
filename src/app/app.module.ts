@@ -11,7 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 
-import { MatToolbarModule, MatButtonModule, MatIconModule, MatTabsModule, MatCardModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatIconModule, MatTabsModule, MatCardModule, MatListModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component'
@@ -54,7 +54,8 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatIconModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
   ],
   providers: [
     UserService

@@ -7,6 +7,7 @@ import * as firebase from 'firebase/app';
 export class UserService {
 
   private authStateSub = new Subject<any>();
+  private user = new Subject<any>();
 
   constructor(public afAuth: AngularFireAuth) {}
   
@@ -16,6 +17,14 @@ export class UserService {
 
      getAuthState(): Observable<any> {
         return this.authStateSub.asObservable();
+     }
+
+     setUser(user: any) {
+         this.user.next({ user: user});
+     }
+
+     getUser(): Observable<any> {
+         return this.user.asObservable();
      }
 
 }
