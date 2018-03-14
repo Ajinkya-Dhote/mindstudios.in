@@ -1,10 +1,8 @@
 
-<mat-toolbar color="primary">
-  <span>MindStudios</span>
-  <span class="spacer"></span>
-  <span [hidden]="isLogoutButtonHidden">
-    <!-- <button mat-button color="warn" (click)="logout()">Logout</button> -->
-    <mat-icon (click)="logout()">power_settings_new</mat-icon>
-  </span>
+<mat-toolbar color="secondary">
+  <span>Project Euler</span>
+  <span class="example-spacer"></span>
+  <i class="fas fa-home"></i>
 </mat-toolbar>
+
 <router-outlet></router-outlet>

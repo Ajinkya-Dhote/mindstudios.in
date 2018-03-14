@@ -1,8 +1,41 @@
+.title {
+  position: absolute;
+  margin-top: 25%;
+  margin-left: 40%;
+  color: white;
+  font-size: 48px;
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+      margin-top: 25%;
+      margin-left: 20%;
+      color: white;
+      font-size: 32px;
+    }
+}
+
+.post-div {
+  margin-top: 10%;
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+}
+
+@media only screen and (max-width: 600px) {
+  .post-div {
+    margin-top: 10%;
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+  }
+
+}
 .example-card {
-    width: 400px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://maxcdn.icons8.com/Share/icon/Sports//running1600.png');
-    background-size: cover;
-  }
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

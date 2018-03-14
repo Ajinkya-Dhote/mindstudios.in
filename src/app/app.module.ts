@@ -1,65 +1,51 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { environment } from '../environments/environment';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import 'hammerjs';
-
-import { MatToolbarModule, MatButtonModule, MatIconModule, MatTabsModule, MatCardModule, MatListModule } from '@angular/material';
+import { ParticlesModule } from 'angular-particle';
+import { MarkdownModule } from 'angular2-markdown';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component'
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
 import { HomeComponent } from './home/home.component';
-import { JevanComponent } from './home/jevan/jevan.component';
-import { UserService } from './services/user.service';
+import { EulerComponent } from './euler/euler.component';
 
-import { LineGraphComponent } from './common/graphs/line-graph/line-graph.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatButtonModule} from '@angular/material/button';
+
+import { PostsComponent } from './euler/posts/posts.component';
+
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: '', component: HomeComponent },
-  { path: '**', component: PageNotFoundComponent }
+  { path: 'post', component: PostsComponent },
+  { path: 'post/:id', component: EulerComponent },
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    PageNotFoundComponent,
     HomeComponent,
-    JevanComponent,
-    LineGraphComponent
+    EulerComponent,
+    PostsComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpModule,
-    FlexLayoutModule,
     RouterModule.forRoot(
       appRoutes
     ),
-    AngularFireModule.initializeApp(environment.firebase, 'my-health'),
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    MarkdownModule.forRoot(),
+    BrowserModule,
+    BrowserAnimationsModule,
+    ParticlesModule,
     MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
     MatTabsModule,
     MatCardModule,
-    MatListModule
+    MatGridListModule,
+    MatButtonModule
   ],
-  providers: [
-    UserService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
