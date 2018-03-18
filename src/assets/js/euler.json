@@ -1,0 +1,58 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Euler Project 1",
+      "problem": "Multiple of 3 and 5",
+      "image": "imahe",
+      "description": "Find the sum of all the multiples of 3 or 5 below N. If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum is 23.",
+      "readme": "/post/1",
+      "isPending": false
+    },
+    {
+      "id": 2,
+      "title": "Euler Project 2",
+      "problem": "Even Fibonacci numbers",
+      "image": "imahe",
+      "description": "By considering the terms in the Fibonacci sequence whose values do not exceed N, find the sum of the even-valued terms.",
+      "readme": "link",
+      "isPending": true
+    },
+    {
+      "id": 3,
+      "title": "Euler Project 3",
+      "problem": "Largest prime factor",
+      "image": "imahe",
+      "description": "What is the largest prime factor of a given number N ? The prime factors o 13195 are 5, 7, 13 and 29 and thus largest is 29",
+      "readme": "link to readme",
+      "isPending": true
+    },
+    {
+      "id": 4,
+      "title": "Euler Project 4",
+      "problem": "Largest palindrome ",
+      "image": "imahe",
+      "description": "Find the largest palindrome made from the product of two 3-digit numbers which is less than N.",
+      "readme": "link to readme",
+      "isPending": true
+    },
+    {
+      "id": 5,
+      "title": "Euler Project 5",
+      "problem": "Smallest multiple",
+      "image": "imahe",
+      "description": "What is the smallest positive number that is evenly divisible(divisible with no remainder) by all of the numbers from 1 to  N",
+      "readme": "link to readme",
+      "isPending": true
+    },
+    {
+      "id": 6,
+      "title": "Euler Project 6",
+      "problem": "Sum square difference",
+      "image": "imahe",
+      "description": "Find the absolute difference between the sum of the squares of the first N natural numbers and the square of the sum.",
+      "readme": "link to readme",
+      "isPending": true
+    }
+  ]
+}

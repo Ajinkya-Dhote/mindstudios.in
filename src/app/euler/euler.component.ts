@@ -11,6 +11,7 @@ import 'rxjs/add/operator/switchMap';
 export class EulerComponent implements OnInit {
 
   path = "";
+  learningPath = "";
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -22,6 +23,7 @@ export class EulerComponent implements OnInit {
 
     let id = this.route.snapshot.paramMap.get('id');
     this.path = `/assets/euler/${id}/README.md`;
+    this.learningPath = `/assets/euler/${id}/LEARNING.md`;
     console.log(this.path);
   }
 

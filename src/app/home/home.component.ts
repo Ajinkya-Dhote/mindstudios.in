@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { Http } from '@angular/http';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import 'rxjs/add/operator/map';
+
 import * as Typed from 'typed.js'
 
 @Component({
@@ -14,7 +18,16 @@ export class HomeComponent implements OnInit {
 	height: number = 100;
   isVisible: boolean = false;
   tiles: object = [];
+
+    animal: string;
+    name: string;
+  constructor(private http: Http, public dialog: MatDialog) { }
+  postsData;
+
   ngOnInit() {
+
+
+
         this.myStyle = {
             'position': 'fixed',
             'width': '100%',
@@ -141,7 +154,7 @@ export class HomeComponent implements OnInit {
 
 setTimeout(() => {
   var typed = new Typed('#typed', {
-    strings: ["Welcome to", "mindstuois.in"],
+    strings: ["Welcome to", "Project Euler"],
     typeSpeed: 100,
     backSpeed: 100,
     onComplete: () => {this.isVisible = true },
@@ -155,6 +168,44 @@ this.tiles = [
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
   ];
 
+  this.http.get("/assets/js/euler.json").map(
+       (response) => response.json()
+    ).subscribe(
+       (data) => {this.displaydata(data);}
+    );
+
 }
+displaydata(data) {this.postsData = data.posts;
+console.log(this.postsData)}
+
+openDialog(): void {
+  this.animal = "h";
+  this.name = "h";
+    let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      width: '250px',
+      data: { name: this.name, animal: this.animal }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
+
+}
+
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'dialog-overview-example-dialog.html',
+})
+export class DialogOverviewExampleDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
 }
